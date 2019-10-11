@@ -1,0 +1,40 @@
+package videojuego;
+
+public class Guerrero {
+	private String nombre;
+	private double pv;
+	
+	private Arma arma;
+	
+	public void atacar() {
+		System.out.println("argggggggggggg " + nombre);
+		arma.usar();
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public double getPv() {
+		return pv;
+	}
+
+	public void setPv(double pv) {
+		this.pv = pv;
+	}
+
+	public Arma getArma() {
+		return arma;
+	}
+
+	public void setArma(Arma arma) {
+		this.arma = arma;
+	}
+
+
+	
+}

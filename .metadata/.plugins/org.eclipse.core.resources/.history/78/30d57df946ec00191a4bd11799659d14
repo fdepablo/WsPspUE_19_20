@@ -1,0 +1,7 @@
+package videojuego;
+
+public abstract class Arma {
+	private String tipo;
+	
+	public abstract void usar();
+}

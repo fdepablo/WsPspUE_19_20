@@ -1,0 +1,9 @@
+package videojuego;
+
+public class Arco {
+	private String tipo;
+	
+	public void usar() {
+		System.out.println("fiuuuuuuuuuu");
+	}
+}

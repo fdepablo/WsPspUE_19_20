@@ -1,0 +1,9 @@
+package videojuego;
+
+public class Espada {
+	private String tipo;
+	
+	public void usar() {
+		System.out.println("swinggggggggg");
+	}
+}

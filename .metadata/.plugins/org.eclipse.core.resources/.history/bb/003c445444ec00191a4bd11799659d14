@@ -1,0 +1,9 @@
+package interfaces;
+
+public class MainInterfaces {
+	public static void main(String[] args) {
+		String palabra = "Felix de pablo";
+		Imprimible ip = new ImprimirFichero();
+		ip.imprimir(palabra);
+	}
+}
