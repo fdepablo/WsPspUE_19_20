@@ -1,0 +1,1 @@
+Hacer varios hilos que calculen si un numero es primo o no

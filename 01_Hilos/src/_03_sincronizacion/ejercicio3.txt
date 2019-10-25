@@ -1,0 +1,9 @@
+Hacer una batalla en una fortaleza de unos personajes (magos, guerreros, etc) contra un jefe final
+Cada personaje sera un hilo que irá a atacar al jefe a la fortaleza.
+Solo un personaje podra entrar a la vez a la fortaleza a atacar al jefe, ambos se atacaran hasta que muera
+el personaje o muera el jefe. El jefe es especialmente duro por lo que costará materle
+En caso de que el personaje muera, el siguiente que quiera combatir contra el jefe entrará a intentar
+derrotarle
+En caso de que el jefe muera, el campeon sera vi
+toreado y aclamado por su publico y el resto de los personajes
+que queden por combatir ya no podran hacerlo

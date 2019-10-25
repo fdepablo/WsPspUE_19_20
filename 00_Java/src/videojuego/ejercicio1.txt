@@ -1,0 +1,4 @@
+Hacer una pelea entre personajes, cada personaje tendrá
+un arma que hara un daño y una vida. En cada turno los 
+personajes se atacaran una vez cada uno y acabará el combate
+cuando uno de los dos muera
