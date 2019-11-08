@@ -1,0 +1,10 @@
+Hacemos un productor de personajes y un consumidor de 
+personajes de manera infinita. El consumidor de personajes cogera al 
+personaje y le dara un arma aleatoria.
+Sacaremos trazas de cuando un productor y un consumidor
+se quedan esperando, y tambien trazas de cuando un productor
+produzca un personaje y un consumidor lo obtenga y le de un 
+arma
+Probad la aplicación para los sigientes casos
+3 productores y 1 consumidor
+1 Productor y 3 consumidores
