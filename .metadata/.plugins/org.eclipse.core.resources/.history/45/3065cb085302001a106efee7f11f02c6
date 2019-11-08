@@ -1,0 +1,12 @@
+package _04_waitnotify;
+
+public class MainWaitNotify {
+
+	public static void main(String[] args) {
+		Buffer buffer = new Buffer();
+		Productor p1 = new Productor(buffer, "P1");
+		Productor p2 = new Productor(buffer, "P2");
+		Productor p3 = new Productor(buffer, "P3");
+	}
+
+}

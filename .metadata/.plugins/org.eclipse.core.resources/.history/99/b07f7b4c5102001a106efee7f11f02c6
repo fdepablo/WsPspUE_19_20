@@ -1,0 +1,44 @@
+package _04_waitnotify;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Buffer {
+	
+	private final static int NUMERO_MAX_ELEMENTOS = 3; 
+	
+	private Queue<String> cola = new LinkedList<String>();
+	
+	public synchronized void addMensaje(String mensaje) {
+		while(cola.size() == NUMERO_MAX_ELEMENTOS) {
+			try {
+				wait();
+				//A diferencia del metodo sleep, el wait se queda esperando
+				//una cantidad indefinida de tiempo, solamente se activará
+				//cuando se invoque el metodo notify() sobre dicho objeto.
+				//wait y notify solamente se puede poner en contextos
+				//sincronizados
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		cola.offer(mensaje);
+		notify();
+	}
+	
+	public synchronized String getMensaje() {
+		while(cola.size() == 0) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		String mensaje = cola.poll();
+		notify();
+		return mensaje;
+	}
+	
+}

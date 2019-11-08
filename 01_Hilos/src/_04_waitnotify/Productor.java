@@ -1,0 +1,23 @@
+package _04_waitnotify;
+
+public class Productor implements Runnable{
+
+	private Buffer buffer;
+	private String nombre;
+		
+	public Productor(Buffer buffer, String nombre) {
+		super();
+		this.buffer = buffer;
+		this.nombre = nombre;
+	}
+
+	@Override
+	public void run() {
+		for(int i=1;i<=10;i++) {
+			String mensaje = "-" + nombre + " - " + i;
+			buffer.addMensaje(mensaje);
+		}
+		
+	}
+	
+}

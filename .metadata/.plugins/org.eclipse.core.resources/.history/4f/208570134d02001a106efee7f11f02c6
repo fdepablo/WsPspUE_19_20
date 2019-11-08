@@ -1,0 +1,28 @@
+package _04_waitnotify;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Buffer {
+	
+	private final static int NUMERO_MAX_ELEMENTOS = 3; 
+	
+	private Queue<String> cola = new LinkedList<String>();
+	
+	public synchronized void addMensaje(String mensaje) {
+		while(cola.size() == NUMERO_MAX_ELEMENTOS) {
+			try {
+				wait();
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		cola.offer(mensaje);
+	}
+	
+	public synchronized String getMensaje() {
+		return cola.poll();
+	}
+	
+}

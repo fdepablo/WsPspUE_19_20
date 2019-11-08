@@ -1,0 +1,24 @@
+package _04_waitnotify;
+
+public class Productor implements Runnable{
+
+	private Buffer buffer;
+	private String nombre;
+		
+	public Productor(Buffer buffer, String nombre) {
+		super();
+		this.buffer = buffer;
+		this.nombre = nombre;
+	}
+
+
+
+
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

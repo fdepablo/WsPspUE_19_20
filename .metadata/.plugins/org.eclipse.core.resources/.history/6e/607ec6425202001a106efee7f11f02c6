@@ -1,0 +1,11 @@
+package _04_waitnotify;
+
+public class Productor implements Runnable{
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

@@ -1,0 +1,12 @@
+package _04_waitnotify;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Buffer {
+	
+	private final static int NUMERO_MAX_ELEMENTOS = 3; 
+	
+	private Queue<String> cola = new LinkedList<String>();
+	
+}

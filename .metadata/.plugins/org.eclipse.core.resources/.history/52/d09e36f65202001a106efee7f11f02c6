@@ -1,0 +1,10 @@
+package _04_waitnotify;
+
+public class MainWaitNotify {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
