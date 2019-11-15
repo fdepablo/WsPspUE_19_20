@@ -1,5 +1,0 @@
-package Herencia;
-
-public interface Movible {
-
-}

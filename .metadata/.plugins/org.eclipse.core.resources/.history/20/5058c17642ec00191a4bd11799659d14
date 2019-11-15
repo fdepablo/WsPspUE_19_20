@@ -1,7 +1,0 @@
-package interfaces;
-
-public class MainInterfaces {
-	public static void main(String[] args) {
-	
-	}
-}

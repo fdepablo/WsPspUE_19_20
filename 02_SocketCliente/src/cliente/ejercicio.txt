@@ -1,0 +1,7 @@
+Hacer un cliente que muestre un menu con las 4 operaciones
+matematicas basicas y la opcion de salir.
+Enviara el tipo de operacion y los dos numeros al servidor
+El servidor procesara la petición y devolvera el resultado
+de la operación
+El programa servidor no se parara nunca y el programa cliente
+se ejecutara hasta que pulse la opcion '0' salir
