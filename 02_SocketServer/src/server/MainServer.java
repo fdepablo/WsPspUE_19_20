@@ -39,6 +39,7 @@ public class MainServer {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		//abria que cerrar las conexiones
 	}
 
 }

@@ -1,0 +1,11 @@
+Add la operacion calcular numero primo al ejercicio anterior
+Iniciar varios clientes y comprobar como el procesamiento de
+calculo de un numero primo cuando se ejecutan varios clientes a la vez
+no puede procesar todas al mismo tiempo.
+
+Mejorar el programa anterior para que se arranque un hilo por cada
+petición de cada cliente de tal manera que cada cliente pueda calcular
+un numero primo sin necesidad de esperar.
+
+Sacar por consola del socket server cuanto tiempo ha tardardo enprocesar
+cada petición.

@@ -14,7 +14,7 @@ public class SocketClientRepetitivo {
 		PrintStream salida = null;
 
 		String ipServidor = "127.0.0.1";
-		int puertoServidor = 2017;
+		int puertoServidor = 2019;
 		// nos conectamos al localhost a traves de esta dirección IP
 
 		try {
