@@ -1,0 +1,21 @@
+Realizar un servidor socket que devuelva la hora en un formato
+que puede ser xml o un formato propietario
+Ej xml
+	<tiempo>
+	  <hora>13</hora>
+	  <minutos>23</minutos>
+	  <segundos>45</minutos>
+	</tiempo>
+	
+Ej propietario
+	13-23-45
+	
+El menu del cliente mostrara los tipos de formato que se pueden pedir,
+y mandará la petición al servidor. El cliente debera desparsear la información
+y mostrarla al usuario.
+Ej menu
+	1- formato xml
+	2- formato propietario
+	0- salir
+	
+El menu se repetira hasta que el usuario de a salir
