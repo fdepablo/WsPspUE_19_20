@@ -14,7 +14,7 @@ public class _02_ProcesoArgumentos {
 		try {
 			//mediante la siguiente linea podemos cambiar la ruta donde queremos guardar el 
 			//fichero
-			proceso.directory(new File("D:\\"));
+			proceso.directory(new File("C:\\Users\\profesoresi\\Desktop\\ws"));
 			proceso.start().waitFor();
 			System.out.println("Proceso lanzado con éxito");
 		} catch (IOException | InterruptedException e) {
