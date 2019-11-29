@@ -10,7 +10,7 @@ public class Lanzador {
 		//Con esto decimos que vamos a arrancar el proceso Java y como primer
 		//argumento le pasamos Principal, es decir ejecutamos la clase "Principal"
 		//ponemos el nombre del paquete tambien
-		proceso = new ProcessBuilder("java", "_07_procesos_io/Principal");
+		proceso = new ProcessBuilder("java", "_02_procesos/Principal","otro parametro");
 		//al ser un proceso que lanzamos no vamos a tener las tipicas entradas y salidas
 		//del usuario (consola)
 		//Con estas tres lineas le decimos al proceso que los errores los guarde en "errores.txt",

@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 public class Principal {
 	public static void main(String[] args) {
+		for(String s : args) {
+			System.out.println(s);
+		}
 		Scanner lector = new Scanner(System.in);
 		System.out.println("Tabla del número: ");
 		int n = lector.nextInt();//cogera lo que hay en entrada.txt
