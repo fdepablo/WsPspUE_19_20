@@ -12,5 +12,71 @@
 		<property name="edad" value="23"></property>
 		<property name="peso" value="58.5"></property>
 	</bean>
+	
+	<!-- por defecto el alcance de los beans es sigleton, es decir, el 
+	objeto es unico
+	prototype es el otro scope y consguiemos que cada vez que pidamos
+	este bean, nos devuelve una copia del mismo, y a partir de ese momento
+	deberemos de llevar su ciclo de vida
+	 -->
+	<bean id="personaBean" class="modelo.entidad.Persona" scope="prototype">
+		<property name="nombre" value="El que no debe ser nombrado"></property>
+	</bean>
+	
+	<bean id="listaPersonas" class="java.util.ArrayList"/>
+	
+	<bean id="direccion1" class="modelo.entidad.Direccion">
+		<property name="tipoVia" value="calle"></property>
+		<property name="nombreVia" value="Hazcaban"></property>
+		<property name="ciudad" value="Pais de nunca jamas"></property>
+	</bean>
+	
+	<bean id="esneip" class="modelo.entidad.Persona">
+		<property name="nombre" value="Esneip Draco"></property>
+		<property name="edad" value="60"></property>
+		<property name="peso" value="80"></property>
+		<property name="direccion" ref="direccion1"></property>
+	</bean>
+	
+	<!-- Tambien podemos hacerlo mediante bean interno -->
+	<bean id="jagri" class="modelo.entidad.Persona">
+		<property name="nombre" value="jagri malfai"></property>
+		<property name="edad" value="50"></property>
+		<property name="peso" value="350"></property>
+		<property name="direccion">
+			<bean class="modelo.entidad.Direccion">
+				<property name="tipoVia" value="anden"></property>
+				<property name="nombreVia" value="3 y cuarto"></property>
+				<property name="ciudad" value="Pais de nunca jamas"></property>
+			</bean>
+		</property>
+	</bean>
+	
+	<!-- Tambien podemos usar constructores -->
+	<bean id="personaConstructor" class="modelo.entidad.Persona">
+		<constructor-arg index="0" value="sirius blac"></constructor-arg>
+		<constructor-arg name="edad" value="45"></constructor-arg>
+		<constructor-arg index="2" value="69"></constructor-arg>
+		<constructor-arg index="3">
+			<bean class="modelo.entidad.Direccion">
+				<property name="tipoVia" value="calle"></property>
+				<property name="nombreVia" value="jogüarts"></property>
+				<property name="ciudad" value="Pais de nunca jamas"></property>
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="listaPersonas2" class="java.util.ArrayList">
+		<constructor-arg>
+			<list value-type="modelo.entidad.Persona">
+				<bean class="modelo.entidad.Persona">
+					<property name="nombre" value="ron"></property>
+					<property name="edad" value="21"></property>
+					<property name="peso" value="54"></property>
+				</bean>
+				<ref bean="personaConstructor"/>
+			</list>
+		</constructor-arg>
+	</bean>
 </beans> 
 

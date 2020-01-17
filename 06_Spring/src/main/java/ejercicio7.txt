@@ -1,0 +1,24 @@
+Haced un programa con spring y maven para dar de alta una casa
+
+Casa
+
+	int precio
+	List<Habitacion>
+		Habitacion
+			m2
+			tipoHabitacion
+	Persona propietario
+		Persona
+			nombre
+			edad
+			peso
+			Direccion
+				tipoVia
+				nombreVia
+				ciudad
+	Direccion casa;
+	List<Persona> listaInquilinos
+	
+Hacer todos los objetos en el xml y luego llamar a la casa desde
+el main e imprimirla	
+	
