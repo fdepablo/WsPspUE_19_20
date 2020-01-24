@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	    http://www.springframework.org/schema/beans/spring-beans.xsd 
+	    http://www.springframework.org/schema/context 
+	    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<bean id="direccion" class="modelo.entidad.Direccion">
+		<property name="tipoVia" value="Calle"></property>
+		<property name="nombreVia" value="Gran via"></property>
+		<property name="ciudad" value="Springfield"></property>
+	</bean>
+	
+	<bean id="direccion2" class="modelo.entidad.Direccion">
+		<property name="tipoVia" value="Avenida"></property>
+		<property name="nombreVia" value="Brasil"></property>
+		<property name="ciudad" value="Selvivil"></property>
+	</bean>
+	
+	<!-- Cuando hacemos un autowired es un concepto el cual Spring
+	intenta inyectar a un objeto con sus dependecias. Dicho objeto
+	debe de estar dado de alta en el contexto de Spring 
+	
+	Tenemos varios tipos de autowired, los mas importantes dos:
+	"byType", busca un objeto que coincida con el tipo de la 
+	propiedad. Problema, si hay 2 o mas beans de ese tipo, spring
+	dara un error ya que no sabe cual de los dos tiene que inyectar
+	Podriamos solucionarlo con el autowired "byName", este tipo
+	de autowired va a hacer una inyeccion buscando un bean que 
+	cuyo id sea igual que la propiedad
+	
+	El autowired por default, es decir si no especificais, primero
+	intenta un byType y si no puede hace un autowired byName
+	-->
+	<!-- 
+	<bean id="persona" class="modelo.entidad.Persona" autowire="byType">
+		<property name="nombre" value="Homero"></property>
+	</bean>
+	 -->
+	 <bean id="persona" class="modelo.entidad.Persona" autowire="byName">
+		<property name="nombre" value="Homero"></property>
+	</bean>
+	 
+</beans> 
+
