@@ -1,2 +1,0 @@
-Hacer una aplicacion que haga un menu con un CRUD mediante
-Spring boot y jpa data de una entidad, a elegir
