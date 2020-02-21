@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import es.ue.modelo.entidad.Videojuego;
@@ -40,16 +41,25 @@ public class ControladorVideojuego {
 	
 	@GetMapping(path="videojuegos",
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<List<Videojuego>> listar(){
-		List<Videojuego> lista = gv.listar();
-		return new ResponseEntity<List<Videojuego>>(lista,HttpStatus.OK);
+	public ResponseEntity<List<Videojuego>> listar(
+			@RequestParam(name = "titulo", required = false) String titulo){
+		if(titulo == null) {
+			List<Videojuego> lista = gv.listar();
+			return new ResponseEntity<List<Videojuego>>(lista,HttpStatus.OK);
+		}else {
+			List<Videojuego> lista = gv.buscarPorTitulo(titulo);
+			return new ResponseEntity<List<Videojuego>>(lista,HttpStatus.OK);
+		}
 	}
 	
 	@GetMapping(path="videojuegos/{id_videojuego}",
 			produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Videojuego> obtener(@PathVariable("id_videojuego") int id){
 		Videojuego v = gv.buscarPorId(id);
-		return new ResponseEntity<Videojuego>(v,HttpStatus.OK);
+		if(v != null)
+			return new ResponseEntity<Videojuego>(v,HttpStatus.OK);
+		else
+			return new ResponseEntity<Videojuego>(HttpStatus.NOT_FOUND);
 	}
 	
 	@PutMapping(path="videojuegos/{id_videojuego}",
@@ -59,13 +69,21 @@ public class ControladorVideojuego {
 			@PathVariable("id_videojuego") int id,
 			@RequestBody Videojuego v){
 		v.setId(id);
-		gv.modificar(v);
-		return new ResponseEntity<Videojuego>(v,HttpStatus.OK);
+		if(gv.buscarPorId(id) != null) {
+			gv.modificar(v);
+			return new ResponseEntity<Videojuego>(v,HttpStatus.OK);
+		}else{
+			return new ResponseEntity<Videojuego>(HttpStatus.NOT_FOUND);
+		}
 	}
 	
 	@DeleteMapping(path = "videojuegos/{id_videojuego}")
 	public ResponseEntity<Integer> borrar(@PathVariable("id_videojuego") int id){
-		gv.borrar(id);
-		return new ResponseEntity<Integer>(id,HttpStatus.OK);
+		if(gv.buscarPorId(id) != null) {
+			gv.borrar(id);
+			return new ResponseEntity<Integer>(id,HttpStatus.OK);
+		}else {
+			return new ResponseEntity<Integer>(HttpStatus.NOT_FOUND);
+		}
 	}
 }

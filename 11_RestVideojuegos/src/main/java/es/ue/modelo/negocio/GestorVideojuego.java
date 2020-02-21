@@ -50,6 +50,10 @@ public class GestorVideojuego {
 		}
 	}
 	
+	public List<Videojuego> buscarPorTitulo(String titulo){
+		return daoVideojuego.findByTituloContainingIgnoreCase(titulo);
+	}
+	
 	public void modificar(Videojuego v) {
 		daoVideojuego.save(v);
 	}

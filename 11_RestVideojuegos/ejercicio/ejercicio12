@@ -1,0 +1,20 @@
+Servicio Rest que cumpla los siguiente requsitos
+Vamos a hacer un CRUD de Pedidos
+El pedido va a tener lo siguiente
+	id
+	precioTotal
+	cliente (string)
+	numero de productos
+	fecha (String o formtato Date)
+	Optativo Mapear una lista de productos
+		id
+		nombre
+		precio
+		
+Reglas de negocio
+	1- no puedo haber precios totales negativos
+	2- la fecha no deberia ser anterior a la actual (optivo)
+	3- el cliente no puede estar vacio y no puede ser menos de 3 caracteres
+	
+Busquedas por ID
+Filtro por cliente y filtro precio total
