@@ -1,4 +1,5 @@
 //org.eclipse.ui.commands/state/org.eclipse.ui.navigator.resources.nested.changeProjectPresentation/org.eclipse.ui.commands.radioState=false
+//org.eclipse.ui.commands/state/org.eclipse.wst.xml.views.XPathView.processor.xpathprocessor/org.eclipse.ui.commands.radioState=xpath10
 ColorsAndFontsPreferencePage.expandedCategories=Torg.eclipse.ui.workbenchMisc
 ColorsAndFontsPreferencePage.selectedElement=Forg.eclipse.jface.textfont
 PLUGINS_NOT_ACTIVATED_ON_STARTUP=;org.eclipse.m2e.discovery;
@@ -16,4 +17,5 @@ org.eclipse.jdt.ui.PropertiesFileEditor.textfont=1|Consolas|20.25|0|WINDOWS|1|-2
 org.eclipse.jdt.ui.editors.textfont=1|Consolas|20.25|0|WINDOWS|1|-27|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
 org.eclipse.jface.textfont=1|Consolas|20.25|0|WINDOWS|1|-27|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
 org.eclipse.mylyn.wikitext.ui.presentation.textFont=1|Consolas|20.25|0|WINDOWS|1|-27|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
+org.eclipse.ui.commands=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<org.eclipse.ui.commands/>
 org.eclipse.wst.sse.ui.textfont=1|Consolas|20.25|0|WINDOWS|1|-27|0|0|0|400|0|0|0|0|3|2|1|49|Consolas;
