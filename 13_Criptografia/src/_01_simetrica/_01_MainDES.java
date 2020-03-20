@@ -39,30 +39,35 @@ public class _01_MainDES {
 
 			//objeto que nos permitira encriptar o desencriptar a a partir de un
 			//palo espartano
-			Cipher cifrador = Cipher.getInstance("DES");
+			Cipher espartano = Cipher.getInstance("DES");
 			System.out.println("Paso 3: Hemos obtenido el cifrador/descifrador");
 			
 			//ahora el cifrador lo configuramos para que use la clave simetrica
 			//para encriptar
-			cifrador.init(Cipher.ENCRYPT_MODE, paloEspartano);
+			espartano.init(Cipher.ENCRYPT_MODE, paloEspartano);
 			System.out.println("Paso 4: Hemos configurado el cifrador");
 						
-			String mensajeOriginal = "La cripta mágica de un sitio pequeño o de un sitio grande";
+			String mensajeOriginal = "Felix va a carrilear a sus alumnos :) :)";
 			//el cifrador trabaja con bytes
 			byte[] bytesMensajeOriginal = mensajeOriginal.getBytes();
 			//el cifrador devuelve una cadena de bytes
-			byte[] bytesMensajeCifrado = cifrador.doFinal(bytesMensajeOriginal);
+			//ahora el mensaje esta cifrado
+			byte[] bytesMensajeCifrado = espartano.doFinal(bytesMensajeOriginal);
+			
 			String mensajeCifrado = new String(bytesMensajeCifrado);
 			System.out.println("Mensaje Original: " + mensajeOriginal);
 			System.out.println("Mensaje Cifrado: " + mensajeCifrado);
 			
+			//Ahora desciframos
 			System.out.println("Desciframos el mensaje cifrado para comprobar que comprueba "
 					+ "con el original");
 			//ahora el cifrador lo configuramos para que use la clave simetrica
 			//para desencriptar. Debemos de usar el mismo palo espartano para
 			//descifrar
-			cifrador.init(Cipher.DECRYPT_MODE, paloEspartano);
-			byte[] bytesMensajeDescifrado = cifrador.doFinal(bytesMensajeCifrado);
+			Cipher espartanoQueLee = Cipher.getInstance("DES");
+			paloEspartano = generador.generateKey();//Genero otro palo
+			espartanoQueLee.init(Cipher.DECRYPT_MODE, paloEspartano);
+			byte[] bytesMensajeDescifrado = espartanoQueLee.doFinal(bytesMensajeCifrado);
 			System.out.println("Mensaje Descifrado: " + new String(bytesMensajeDescifrado));
 			
 			//Todas estas excepciones derivan de GeneralSecurityException
